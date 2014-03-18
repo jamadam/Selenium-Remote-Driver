@@ -1,12 +1,13 @@
 {
    "abstract" : "Perl Client for Selenium Remote Driver",
    "author" : [
-      "Aditya Ivaturi <ivaturi@gmail.com>",
-      "Luke Closs <cpan@5thplane.com>",
-      "Mark Stosberg <mark@stosberg.com>"
+      "'Luke Closs <cpan@5thplane.com>'",
+      "'Daniel Gempesaw <gempesaw@gmail.com>'",
+      "'Aditya Ivaturi <ivaturi@gmail.com>'",
+      "'Mark Stosberg <mark@stosberg.com>'"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "apache_2_0"
    ],
@@ -57,14 +58,11 @@
       },
       "test" : {
          "requires" : {
-            "DDP" : "0",
-            "Data::Printer" : "0",
             "File::Basename" : "0",
             "File::stat" : "0",
             "IPC::Open2" : "0",
             "LWP::Protocol::PSGI" : "0.04",
             "LWP::Simple" : "0",
-            "Test::LWP::UserAgent" : "0",
             "Test::MockObject" : "0",
             "Test::MockObject::Extends" : "0",
             "Test::Tester" : "0"
