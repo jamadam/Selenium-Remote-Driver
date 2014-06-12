@@ -437,7 +437,7 @@ sub _execute_command {
             $resource->{'url'}, $params );
         if ( ref($resp) eq 'HASH' ) {
             if ( $resp->{cmd_status} && $resp->{cmd_status} eq 'OK' ) {
-                return $resp->{cmd_return};
+                return $resp->{cmd_return} // 1;
             }
             else {
                 my $msg = "Error while executing command";
