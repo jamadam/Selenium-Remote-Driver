@@ -44,6 +44,7 @@ sub _check_ok {
     my $method = shift;
     my @args   = @_;
     my ($rv, $num_of_args, @r_args);
+    local $Selenium::Remote::Driver::SUCCESS_MODE = 1;
     try {
         $num_of_args = $self->has_args($method);
         @r_args = splice( @args, 0, $num_of_args );

@@ -15,6 +15,8 @@ use v5.10.0;    # Before 5.006, v5.10.0 would not be understood.
 use Carp;
 our @CARP_NOT;
 
+our $SUCCESS_MODE;
+
 use IO::Compress::Zip qw(zip $ZipError);
 use Scalar::Util;
 use Selenium::Remote::RemoteConnection;
@@ -437,6 +439,7 @@ sub _execute_command {
             $resource->{'url'}, $params );
         if ( ref($resp) eq 'HASH' ) {
             if ( $resp->{cmd_status} && $resp->{cmd_status} eq 'OK' ) {
+                return !!1 if $SUCCESS_MODE;
                 return $resp->{cmd_return};
             }
             else {
