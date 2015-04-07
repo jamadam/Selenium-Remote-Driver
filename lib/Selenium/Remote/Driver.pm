@@ -21,7 +21,7 @@ use Selenium::Remote::RemoteConnection;
 use Selenium::Remote::Commands;
 use Selenium::Remote::WebElement;
 use File::Spec::Functions ();
-use File::Basename ();
+use File::Basename qw(basename);
 use Sub::Install ();
 
 use constant FINDERS => {
@@ -2474,7 +2474,7 @@ sub _prepare_file {
     my ($self,$filename) = @_;
     if ( not -r $filename ) { die "upload_file: no such file: $filename"; }
     my $string = "";    # buffer
-    zip $filename => \$string
+    zip $filename => \$string, Name => basename($filename)
       or die "zip failed: $ZipError\n";    # compress the file into string
     require MIME::Base64;
 
